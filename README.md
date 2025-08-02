@@ -1,0 +1,3 @@
+ - code_visualization.ipynb contain all the code use in ppt file
+ - Gaussian_process.ipynb is main report
+ - Gaussian Process.pptx is ppt file
