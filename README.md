@@ -1,40 +1,49 @@
-# Gaussian Process Project
+# Gaussian Processes – Notebooks
 
-This repository contains the implementation, analysis, and presentation materials for the Gaussian Process study.
+This repository contains notebooks for learning, visualizing, and experimenting with Gaussian Processes (GPs) and common kernels (e.g., RBF).
 
-## File Structure
+## Repository Structure
 
-- **code_visualization.ipynb**  
-  Jupyter Notebook containing all code used for generating the figures, plots, and visualizations included in the presentation.
+- Notebooks
+  - `Gaussian_process.ipynb`: Main report-style notebook with theory, methodology, and experiments.
+  - `code_visualization.ipynb`: Visualization playground (RBF effects, prior vs posterior intuition, polynomial priors, kernel comparisons, etc.).
 
-- **Gaussian_process.ipynb**  
-  The main report notebook. Contains detailed explanations, methodology, experiments, and results for the Gaussian Process analysis.
+- Presentation
+  - `Gaussian Process.pptx`: Slides summarizing concepts, visuals, and results.
 
-- **Gaussian Process.pptx**  
-  PowerPoint presentation summarizing the project, key findings, and visual results.
+## Setup
 
-## Usage
+1) Create/activate a Python 3.9+ environment.
 
-1. **View the Report**  
-   Open `Gaussian_process.ipynb` in Jupyter Notebook or Jupyter Lab to read the full analysis.
+2) Install dependencies:
 
-2. **Reproduce Visualizations**  
-   Open `code_visualization.ipynb` to see and run the code used to create the presentation's figures.
+```
+pip install -r requirements.txt
+```
 
-3. **Presentation**  
-   Open `Gaussian Process.pptx` in PowerPoint (or a compatible viewer) to view the slides.
+`requirements.txt` includes: numpy, matplotlib, scikit-learn, scipy. For running notebooks, you may also need:
 
-## Requirements
+```
+pip install jupyterlab
+```
 
-- Python 3.x
-- Jupyter Notebook / Jupyter Lab
-- Required Python packages (install via `pip install -r requirements.txt` if available):
-  - numpy
-  - matplotlib
-  - scikit-learn
-  - (and other dependencies used in the notebooks)
+## How to Use
+
+- Open `Gaussian_process.ipynb` or `code_visualization.ipynb` in Jupyter Lab/Notebook and run cells top-to-bottom.
+- Use the presentation `Gaussian Process.pptx` for a high-level summary of results and visuals.
+
+## Tips (scikit-learn)
+
+- Composite kernel parts are accessible as `k1`/`k2` (e.g., `C * RBF`).
+- Print kernel before/after fitting to see optimized values:
+
+```
+print("Initial kernel:", gp.kernel_)
+gp.fit(X_train, y_train)
+print("Optimized kernel:", gp.kernel_)
+```
 
 ## Notes
 
-- Ensure that all notebooks are run in the correct working directory so that any data or supporting files can be accessed properly.
-- The `.pptx` file is for presentation purposes only; for full details, refer to the main report notebook.
+- Start with `Gaussian_process.ipynb` for the full narrative.
+- Ensure the working directory is the repo root when running notebooks.
